@@ -3,8 +3,18 @@ import Typed from 'react-typed';
 import { makeStyles } from '@mui/styles';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
+import Logo from '../images/photo2.png'
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import DownloadIcon from '@mui/icons-material/Download';
+import YouTube from '@mui/icons-material/YouTube';
+import Email from '@mui/icons-material/Email';
 
 const useStyles = makeStyles((theme) => ({
     home: {
@@ -14,11 +24,20 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
         minHeight: '100vh',
     },
+    imageContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start', // Align the image to the top
+        minHeight: '100vh',
+    },
+
     homeImg: {
         width: theme.spacing(30),
         height: theme.spacing(30),
         animation: '$floatImage 4s ease-in-out infinite',
+        marginTop: theme.spacing(30), // Adjust the top margin as needed
     },
+
     shape: {
         position: 'absolute',
         top: 0,
@@ -31,9 +50,18 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: theme.palette.text.primary,
     },
+
+    typingContainer: {
+        display: 'flex',
+        alignItems: 'center',
+        width: '95vh', // Adjust the width as needed
+    },
+
     typingText: {
         color: theme.palette.primary.main,
+        whitespace: 'nowrap',
     },
+
     socialMedia: {
         marginTop: theme.spacing(3),
         '& a': {
@@ -45,6 +73,9 @@ const useStyles = makeStyles((theme) => ({
                 color: theme.palette.primary.main,
             },
         },
+    },
+    icon: {
+        color: theme.palette.text.primary,
     },
     btn: {
         marginTop: theme.spacing(2),
@@ -79,14 +110,17 @@ function Home() {
     return (
         <section className={classes.home} id="home">
 
-        <img src="/images/myPhoto.png" alt="Minjun Kim" className={classes.homeImg} />
+            <div className={classes.imageContainer}>
+                <img src={Logo} alt="Minjun Kim" className={classes.homeImg} />
+            </div>
 
             <div className={classes.shape}></div>
             <div className={classes.homeContent}>
                 <Typography variant="h3">Hello, I'm</Typography>
-                <Typography variant="h1">Minjun Kim!</Typography>
-                <Typography variant="h3">
-                    And I'm{' '}
+                <Typography variant="h1" style={{ marginBottom: '1rem' }}>Minjun Kim!</Typography>
+
+                <Typography variant="h3" className={classes.typingContainer}>
+                    And I'm{'\u00A0'}
                     <Typed
                         strings={roles.map((role) => `${role}`)}
                         typeSpeed={70}
@@ -96,27 +130,39 @@ function Home() {
                     >
                         <span className={classes.typingText}></span>
                     </Typed>
-                    </Typography>
-                <Typography variant="body1">
-                    Actively seeking Software Engineering Co-op opportunities for Fall 2023.
                 </Typography>
+
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px'}}>
+                    <Typography variant="body1">
+                        Currently aumotating @ Nokia. <br />
+                        Seeking Summer 2023 Internship Opportunities.
+                    </Typography>
+                </Box>
+
                 <div className={classes.socialMedia}>
                     <a href="https://www.linkedin.com/in/kimminjun/" target="_blank">
-                        <i className="bx bxl-linkedin-square"></i>
+                        <LinkedInIcon style={{color: '#0ef'}} />
                     </a>
                     <a href="https://github.com/Minjun1Kim" target="_blank">
-                        <i className="bx bxl-github"></i>
+                        <GitHubIcon style={{color: '#0ef'}}/>
                     </a>
-                    <a href="https://minjunkim.ca" target="_blank">
-                        <i className="bx bx-globe"></i>
+                    <a href="mailto:minjunn.kim@mail.utoronto.ca" target="_blank">
+                        <YouTube style={{color: '#0ef'}}/>
                     </a>
+
                 </div>
-                <Button variant="contained" color="primary" className={classes.btn}>
-                    Contact <i className="bx bx-envelope"></i>
-                </Button>
-                <Link to="/MinjunKimResume.pdf" target="_blank" className={classes.btn} id="dwn">
-                    Download Resume <i className="bx bxs-download"></i>
-                </Link>
+
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Stack direction="row" spacing={2} mt={2}>
+                        <Button variant="contained" color="primary" className={classes.btn}>
+                            Contact <Email />
+                        </Button>
+                        <Button variant="contained" color="primary" className={classes.btn}>
+                            Download Resume <DownloadIcon />
+                        </Button>
+                    </Stack>
+                </div>
+                        
             </div>
         </section>
     );
