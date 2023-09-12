@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
+import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -37,48 +38,42 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Header() {
-    const classes = useStyles();
-    const location = useLocation();
+  const classes = useStyles();
+  const location = useLocation();
 
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-      
-    return (
-        <header className={classes.header}>
-          <Link to="/" className={classes.logo}>
-            Minjun Kim
-          </Link>
-    
-          <nav className={classes.navbar}>
-            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-              Home
-            </Link>
-            <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
-              About
-            </Link>
-            <Link to="/education" className={location.pathname === '/education' ? 'active' : ''}>
-              Education
-            </Link>
-            <Link to="/skills" className={location.pathname === '/skills' ? 'active' : ''}>
-              Skills
-            </Link>
-            <Link to="/Experience" className={location.pathname === '/experience' ? 'active' : ''}>
-              Experience
-            </Link>
-            <Link to="/Projects" className={location.pathname === '/projects' ? 'active' : ''}>
-              Projects
-            </Link>
-            <Link to="/Contact" className={location.pathname === '/contact' ? 'active' : ''}>
-              Contact
-            </Link>
-          </nav>
-        </header>
-    );
+  return (
+    <header className={classes.header}>
+      <Link to="/" className={classes.logo}>
+        Minjun Kim
+      </Link>
+
+      <nav className={classes.navbar}>
+        <a href="/" onClick={() => scrollToSection('home')} className={location.pathname === '/' ? 'active' : ''}>
+          Home
+        </a>
+        <a href="/about" onClick={() => scrollToSection('about')} className={location.pathname === '/about' ? 'active' : ''}>
+          About
+        </a>
+        <a href="/education" onClick={() => scrollToSection('education')} className={location.pathname === '/education' ? 'active' : ''}>
+          Education
+        </a>
+        <a href="/notes" onClick={() => scrollToSection('notes')} className={location.pathname === '/notes' ? 'active' : ''}>
+          Notes
+        </a>
+        <a href="/contact" onClick={() => scrollToSection('contact')} className={location.pathname === '/contact' ? 'active' : ''}>
+          Contact
+        </a>
+        {/* Add similar links for other sections */}
+      </nav>
+    </header>
+  );
 }
 
 export default Header;

@@ -10,11 +10,10 @@ import { Link } from 'react-router-dom';
 import Logo from '../images/photo2.png'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import EmailIcon from '@mui/icons-material/Email';
-import YouTubeIcon from '@mui/icons-material/YouTube';
 import DownloadIcon from '@mui/icons-material/Download';
 import YouTube from '@mui/icons-material/YouTube';
 import Email from '@mui/icons-material/Email';
+import ThreeScene from './ThreeScene';
 
 const useStyles = makeStyles((theme) => ({
     home: {

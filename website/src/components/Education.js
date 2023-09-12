@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
+import ThreeScene from './ThreeScene';
 
 const useStyles = makeStyles((theme) => ({
     education: {
@@ -32,12 +33,7 @@ function Education() {
 
     return (
         <section className={classes.education}>
-            <div className={classes.educationContent}>
-                {/* Education content */}
-            </div>
-            <div className={classes.educationImg}>
-                <img src="your-image-path" alt="Education" />
-            </div>
+            <ThreeScene />
         </section>
     );
 }
