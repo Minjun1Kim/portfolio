@@ -55,21 +55,21 @@ function Header() {
       </Link>
 
       <nav className={classes.navbar}>
-        <a href="/" onClick={() => scrollToSection('home')} className={location.pathname === '/' ? 'active' : ''}>
+        <RouterLink to="/" className={location.pathname === '/' ? 'active' : ''}>
           Home
-        </a>
-        <a href="/about" onClick={() => scrollToSection('about')} className={location.pathname === '/about' ? 'active' : ''}>
+        </RouterLink>
+        <RouterLink to="/about" className={location.pathname === '/about' ? 'active' : ''}>
           About
-        </a>
-        <a href="/education" onClick={() => scrollToSection('education')} className={location.pathname === '/education' ? 'active' : ''}>
+        </RouterLink>
+        <RouterLink to="/education" className={location.pathname === '/education' ? 'active' : ''}>
           Education
-        </a>
-        <a href="/notes" onClick={() => scrollToSection('notes')} className={location.pathname === '/notes' ? 'active' : ''}>
+        </RouterLink>
+        <RouterLink to="/notes" className={location.pathname === '/notes' ? 'active' : ''}>
           Notes
-        </a>
-        <a href="/contact" onClick={() => scrollToSection('contact')} className={location.pathname === '/contact' ? 'active' : ''}>
+        </RouterLink>
+        <RouterLink to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
           Contact
-        </a>
+        </RouterLink>
         {/* Add similar links for other sections */}
       </nav>
     </header>

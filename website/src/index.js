@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { ThemeProvider, createTheme } from '@mui/material/styles'; // Import ThemeProvider and createTheme
 import CssBaseline from '@mui/material/CssBaseline'; // Import CssBaseline to reset browser styles
 
@@ -27,9 +27,9 @@ ReactDOM.render(
     {/* Wrap your entire application with ThemeProvider and CssBaseline */}
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
