@@ -9,6 +9,8 @@ import Banner from '../images/lofiboy.gif'
 import JSLogo from '../images/JSLogo.png'
 import NokiaLogo from '../images/nokia.jpg'
 import UofTLogo from '../images/uoft.jpg'
+import CSCB07 from "./courses/CSCB07";
+import MATA29 from "./courses/MATA29";
 
 const useStyles = makeStyles((theme) => ({
   notes: {
@@ -131,7 +133,12 @@ function Notes() {
           switch (selectedItem) {
             case "Home":
               return  <NotesCard user={user} courses={courses} className={classes.notes} />
+
+            case "CSCB07":
+              return <CSCB07/>
             
+            case "MATA29":
+              return <MATA29/>
             default:
               return <NotesCard user={user} courses={courses} className={classes.notes}/>
           }

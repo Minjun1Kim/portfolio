@@ -44,6 +44,7 @@ function ContactMe() {
               label="Email Subject (required)"
               variant="outlined"
               required
+              style={{ backgroundColor: '#fff' }}
             />
           </Grid>
         </Grid>
@@ -52,7 +53,7 @@ function ContactMe() {
           name="email_content"
           rowsMin={5}
           placeholder="Your Message (required)"
-          style={{ width: '100%', marginBottom: '16px' }}
+          style={{ width: '100%', marginBottom: '16px', color: '#fff', backgroundColor: '#1f242d'}}
           required
         />
 

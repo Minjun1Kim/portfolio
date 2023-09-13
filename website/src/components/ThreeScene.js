@@ -1,9 +1,8 @@
+// https://dev.to/nourdinedev/how-to-use-threejs-and-react-to-render-a-3d-model-of-your-self-4kkf
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
-
-// Import your GLB model (provide the correct path)
-import Sonic from '../sonic.glb';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { loadSonic } from './Sonic.js'; // Import the loadSonic function
 
 const ThreeScene = () => {
   const canvasRef = useRef();
@@ -22,12 +21,6 @@ const ThreeScene = () => {
 
     camera.position.z = 5;
 
-    const loader = new GLTFLoader();
-    loader.load(Sonic, (gltf) => {
-    gltf.scene.position.set(20, 20, 20);
-      scene.add(gltf.scene);
-    });
-
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -36,6 +29,12 @@ const ThreeScene = () => {
 
       renderer.render(scene, camera);
     };
+
+    // Load the Sonic model
+    loadSonic().then(({ sonic }) => {
+      sonic.position.set(0, 0, 0); // Adjust the position as needed
+      scene.add(sonic);
+    });
 
     animate();
   }, []);

@@ -20,7 +20,7 @@ import FunctionsIcon from '@mui/icons-material/Functions';
 // import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-
+import CSCB07 from "../courses/CSCB07";
 
 function SideNavBar(props) {
     // Extract props from the parent component, if needed
