@@ -1,8 +1,12 @@
 {
+  "homepage": "https://github.io/Minjun1Kim/portfolio",
   "dependencies": {
     "react-router-dom": "^6.15.0",
     "react-scroll": "^1.8.9",
     "react-typed": "^1.2.0",
     "typed.js": "^2.0.16"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }

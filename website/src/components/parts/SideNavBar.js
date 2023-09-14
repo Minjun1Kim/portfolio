@@ -202,7 +202,7 @@ function SideNavBar(props) {
                 sx={{ color: "#fff"}}
                 // sx={{ color: "#fff", marginLeft: "1rem", marginTop: "1rem" }}
                 >
-                Minjun Kim
+              
                 </Typography>
             )}
             </div>
