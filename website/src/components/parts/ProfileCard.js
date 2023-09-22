@@ -1,18 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Avatar, Typography, Paper, IconButton, Divider, Button, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Avatar, Typography, Paper, Divider, Button } from '@mui/material';
 import dndImage from '../../images/dnd.png'; // Replace with the actual path to your image
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import DownloadIcon from '@mui/icons-material/Download';
 import YouTube from '@mui/icons-material/YouTube';
-import Email from '@mui/icons-material/Email';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import StarIcon from '@mui/icons-material/Star';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import EventIcon from '@mui/icons-material/Event';
+
 import BusinessIcon from '@mui/icons-material/Business';
 import PersonIcon from '@mui/icons-material/Person';
 
@@ -22,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing(2),
-    marginTop: '10rem', // Adjust the margin as needed
+    marginTop: '3rem', // Adjust the margin as needed
     color: theme.palette.secondary.main,
     width: '600px', // Set your desired width
     height: 'auto', // Set your desired height
@@ -33,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     alignItems: 'center',
     padding: theme.spacing(2),
-    // marginTop: '10px', // Adjust the margin as needed
+    marginTop: '-10%', // Adjust the margin as needed
     width: '550px', // Set your desired width
     height: 'auto', // Set your desired height
 },
@@ -44,13 +41,14 @@ activityCard: {
     padding: theme.spacing(2),
     backgroundColor: '#262522',
     borderRadius: '0.8rem',
+    alignSelf: 'center',
     width: '90%', // Set your desired width
     marginTop: '20px', // Adjust the margin as needed
   },
 
   avatarContainer: {
     position: 'relative', // Position container relatively
-    marginBottom: theme.spacing(2),
+    // marginBottom: theme.spacing(2),
   },
   avatar: {
     width: '100%', // Adjust the size of the avatar as needed
@@ -73,7 +71,7 @@ activityCard: {
   },
   banner: {
     width: '100%',
-    height: '60%',
+    height: '200px',
     objectFit: 'cover',
   },
   viewButton: {
@@ -88,7 +86,7 @@ activityCard: {
   username: {
     fontSize: '1.8rem',
     fontWeight: 'bold',
-    marginBottom: theme.spacing(1),
+    // marginBottom: theme.spacing(1),
   },
   bio: {
     textAlign: 'center',
@@ -117,19 +115,7 @@ activityCard: {
     width: '70%',
     height: 'auto',
   },
-  icon: {
-    fontSize: '1.2rem',
-    marginRight: theme.spacing(1),
-  },
-  bite: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    width: '25%', // Adjust the size of the bite as needed
-    height: '25%', // Adjust the size of the bite as needed
-    clipPath: 'polygon(20% 0%, 20% 20%, 0% 20%, 0% 10%, 20% 0%)',
-    background: '#33363d', // Adjust the background color as needed
-  },
+
 
   infoCard: {
     display: 'flex',
@@ -138,6 +124,7 @@ activityCard: {
     padding: theme.spacing(2),
     backgroundColor: '#262522',
     borderRadius: '0.8rem',
+    alignSelf: 'center',
     marginTop: '20px', // Adjust the margin as needed
     width: '90%', // Set your desired width
   },
@@ -165,6 +152,7 @@ activityCard: {
     padding: theme.spacing(2),
     backgroundColor: '#262522',
     borderRadius: '0.8rem',
+    alignSelf: 'center',
     marginTop: '20px', // Adjust the margin as needed
     width: '90%', // Set your desired width
   },
@@ -345,13 +333,13 @@ function ProfileCard({ user, experience }) {
                 </Button>
 
                 <div className={classes.socialMedia}>
-                    <a href="https://www.linkedin.com/in/kimminjun/" target="_blank" style={{ marginRight: '5px'}}>
+                    <a href="https://www.linkedin.com/in/kimminjun/" target="_blank" rel="noreferrer" style={{ marginRight: '5px'}}>
                         <LinkedInIcon style={{color: '#0ef'}} />
                     </a>
-                    <a href="https://github.com/Minjun1Kim" target="_blank" style={{ marginRight: '5px'}}>
+                    <a href="https://github.com/Minjun1Kim" target="_blank" rel="noreferrer" style={{ marginRight: '5px'}}>
                         <GitHubIcon style={{color: '#0ef'}}/>
                     </a>
-                    <a href="mailto:minjunn.kim@mail.utoronto.ca" target="_blank" style={{ marginRight: '5px'}}>
+                    <a href="mailto:minjunn.kim@mail.utoronto.ca" target="_blank" rel="noreferrer" style={{ marginRight: '5px'}}>
                         <YouTube style={{color: '#0ef'}}/>
                     </a>
                 </div>

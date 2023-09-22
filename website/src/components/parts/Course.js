@@ -6,7 +6,6 @@ import { dracula } from "@uiw/codemirror-theme-dracula";
 import { java } from "@codemirror/lang-java";
 import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
-import CodeIcon from '@mui/icons-material/Code';
 import LinkIcon from '@mui/icons-material/Link';
 
 const Course = (props) => {

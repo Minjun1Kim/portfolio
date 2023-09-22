@@ -1,16 +1,27 @@
 import React, {useState} from "react";
 import { makeStyles } from '@mui/styles';
-import SideNavBar from "./parts/SideNavBar";
-import Home from "./Home";
-import NotesHome from "./NotesHome";
 import NotesCard from "./parts/NotesCard";
 import Avatar from '../images/profilepic.png'
 import Banner from '../images/lofiboy.gif'
 import JSLogo from '../images/JSLogo.png'
-import NokiaLogo from '../images/nokia.jpg'
+
 import UofTLogo from '../images/uoft.jpg'
 import CSCB07 from "./courses/CSCB07";
 import MATA29 from "./courses/MATA29";
+import styled from 'styled-components';
+
+const Section = styled.section`
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  
+    @media only screen and (max-width: 768px) {
+      height: 200vh;
+    }
+`
 
 const useStyles = makeStyles((theme) => ({
   notes: {
@@ -32,15 +43,15 @@ function Notes() {
 
     const classes = useStyles();
     const [selectedItem, setSelectedItem] = useState("Overview");
-    const [foldedView, setFoldedView] = useState(false);
+    // const [foldedView, setFoldedView] = useState(false);
 
-    const handleItemClick = (itemText) => {
-        setSelectedItem(itemText);
-    };
+    // const handleItemClick = (itemText) => {
+    //     setSelectedItem(itemText);
+    // };
     
-    const handleSidebarToggle = () => {
-    setFoldedView(!foldedView);
-    };
+    // const handleSidebarToggle = () => {
+    // setFoldedView(!foldedView);
+    // };
 
 
     const user = {
@@ -109,45 +120,47 @@ function Notes() {
     ];
       
     return (
-        <section id="notes">
-            <SideNavBar
-                foldedView={foldedView}
-                handleSidebarToggle={handleSidebarToggle}
-                // userData={userData}
-                selectedItem={selectedItem}
-                handleItemClick={handleItemClick}
-            />
+        <Section>
+          <section id="notes">
+              {/* <SideNavBar
+                  foldedView={foldedView}
+                  handleSidebarToggle={handleSidebarToggle}
+                  // userData={userData}
+                  selectedItem={selectedItem}
+                  handleItemClick={handleItemClick}
+              /> */}
 
-        <div
-          style={{
-            background: "#151718",
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            alignItems: "center", // Center content vertically
-            justifyContent: "center", // Center content horizontally
-          }}
-        >
+          <div
+            style={{
+              background: "#151718",
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              alignItems: "center", // Center content vertically
+              justifyContent: "center", // Center content horizontally
+            }}
+          >
 
-        {(() => {
-          switch (selectedItem) {
-            case "Home":
-              return  <NotesCard user={user} courses={courses} className={classes.notes} />
+          {(() => {
+            switch (selectedItem) {
+              case "Home":
+                return  <NotesCard user={user} courses={courses} className={classes.notes} />
 
-            case "CSCB07":
-              return <CSCB07/>
-            
-            case "MATA29":
-              return <MATA29/>
-            default:
-              return <NotesCard user={user} courses={courses} className={classes.notes}/>
-          }
-        })()}
-      </div>
+              case "CSCB07":
+                return <CSCB07/>
+              
+              case "MATA29":
+                return <MATA29/>
+              default:
+                return <NotesCard user={user} courses={courses} className={classes.notes}/>
+            }
+          })()}
+        </div>
 
-      
+        
 
-        </section>
+          </section>
+        </Section>
     );
 
 }

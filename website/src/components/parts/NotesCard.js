@@ -1,18 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Avatar, Typography, Paper, IconButton, Divider, Button, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Avatar, Typography, Paper, Divider, Button } from '@mui/material';
 import dndImage from '../../images/dnd.png'; // Replace with the actual path to your image
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import DownloadIcon from '@mui/icons-material/Download';
+
 import YouTube from '@mui/icons-material/YouTube';
-import Email from '@mui/icons-material/Email';
+
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import StarIcon from '@mui/icons-material/Star';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import EventIcon from '@mui/icons-material/Event';
 import BusinessIcon from '@mui/icons-material/Business';
 import PersonIcon from '@mui/icons-material/Person';
 
@@ -120,19 +118,6 @@ const useStyles = makeStyles((theme) => ({
   image: {
     width: '70%',
     height: 'auto',
-  },
-  icon: {
-    fontSize: '1.2rem',
-    marginRight: theme.spacing(1),
-  },
-  bite: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    width: '25%', // Adjust the size of the bite as needed
-    height: '25%', // Adjust the size of the bite as needed
-    clipPath: 'polygon(20% 0%, 20% 20%, 0% 20%, 0% 10%, 20% 0%)',
-    background: '#33363d', // Adjust the background color as needed
   },
 
   infoCard: {
@@ -355,13 +340,13 @@ function ProfileCard({ user, courses }) {
                 </Button>
 
                 <div className={classes.socialMedia}>
-                    <a href="https://www.linkedin.com/in/kimminjun/" target="_blank" style={{ marginLeft: '25px'}}>
+                    <a href="https://www.linkedin.com/in/kimminjun/" target="_blank" rel="noreferrer" style={{ marginLeft: '25px'}}>
                         <LinkedInIcon style={{color: '#0ef'}} />
                     </a>
-                    <a href="https://github.com/Minjun1Kim" target="_blank" style={{ marginLeft: '5px'}}>
+                    <a href="https://github.com/Minjun1Kim" target="_blank" rel="noreferrer" style={{ marginLeft: '5px'}}>
                         <GitHubIcon style={{color: '#0ef'}}/>
                     </a>
-                    <a href="mailto:minjunn.kim@mail.utoronto.ca" target="_blank" style={{ marginLeft: '5px'}}>
+                    <a href="mailto:minjunn.kim@mail.utoronto.ca" target="_blank" rel="noreferrer" style={{ marginLeft: '5px'}}>
                         <YouTube style={{color: '#0ef'}}/>
                     </a>
                 </div>

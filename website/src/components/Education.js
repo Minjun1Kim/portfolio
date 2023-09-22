@@ -1,6 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import ThreeScene from './ThreeScene';
+import styled from 'styled-components';
+
+const Section = styled.section`
+    height: 100vh;
+    scroll-snap-align: start;
+`
 
 const useStyles = makeStyles((theme) => ({
     education: {
@@ -32,9 +38,11 @@ function Education() {
     const classes = useStyles();
 
     return (
-        <section className={classes.education}>
-            <ThreeScene />
-        </section>
+        <Section>
+            <section className={classes.education}>
+                <ThreeScene />
+            </section>
+        </Section>
     );
 }
 
