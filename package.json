@@ -1,6 +1,7 @@
 {
   "homepage": "https://github.io/Minjun1Kim/portfolio",
   "dependencies": {
+    "emailjs": "^4.0.3",
     "react-router-dom": "^6.15.0",
     "react-scroll": "^1.8.9",
     "react-typed": "^1.2.0",
