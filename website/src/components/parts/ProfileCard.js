@@ -177,9 +177,41 @@ activityCard: {
 
 }));
 
+
+const gradientBorderStyle = {
+  position: 'relative',
+  overflowY: 'hidden',
+};
+
+const beforeAfterStyle = {
+  content: '',
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  border: '2px solid transparent',
+  borderImage: 'linear-gradient(#00e5ff, #b400fb)',
+  borderImageSlice: 1,
+};
+
+const gradientBorderedCard = {
+  ...gradientBorderStyle,
+};
+
+const beforeStyle = {
+  ...beforeAfterStyle,
+  top: 0,
+  left: 0,
+};
+
+const afterStyle = {
+  ...beforeAfterStyle,
+  bottom: 0,
+  right: 0,
+};
+
 function ExperienceComponent({ experience }) {
     const classes = useStyles();
-  
+    
     return (
       <div>
         {experience.map((exp, index) => (
@@ -233,6 +265,9 @@ function ProfileCard({ user, experience }) {
     const classes = useStyles();
 
     return (
+        <div style={gradientBorderedCard}>
+        <div style={beforeStyle}></div>
+        <div style={afterStyle}></div>
         <Paper className={classes.profileCard} elevation={3} style={{borderRadius: '0.8rem'}}>
             <div className={classes.bannerContainer}>
                 <img src={user.banner} alt="Banner" className={classes.banner} />
@@ -346,9 +381,8 @@ function ProfileCard({ user, experience }) {
 
             </Paper>
         </Paper>
+        </div>
     );
-
-
 }
 
 export default ProfileCard;

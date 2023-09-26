@@ -12,7 +12,6 @@ import Notes from './components/Notes';
 import styled from 'styled-components';
 
 function App() {
-
   const location = useLocation();
 
   const Container = styled.div`
@@ -25,28 +24,22 @@ function App() {
     &::-webkit-scrollbar {
       display: none;
     }
-  `
+  `;
 
   return (
     <Container>
-      <Home />
-      <About  />
-      <Education />
-      <Notes />
-      <Contact />
-      {/* <Router>
-        {location.pathname !== "/notes" && <Header />}
+      {location.pathname !== "/notes" && <Header />}
+      <Router>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/education" component={Education} />
           <Route path="/skills" component={Skills} />
-          <Route path="/experience" component={Experience} />
           <Route path="/projects" component={Projects} />
           <Route path="/contact" component={Contact} />
           <Route path="/notes" component={Notes} />
         </Switch>
-      </Router> */}
+      </Router>
     </Container>
   );
 }
